@@ -1,0 +1,113 @@
+body {
+	font: 12px sans-serif;
+  }
+  
+svg{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+  path {
+	stroke-width: 1px;
+	stroke: rgb(92, 128, 0);
+	/*cursor: pointer;*/
+	opacity: 0.5;
+  }
+  
+  path:hover {
+	  fill-opacity: .3;
+  }
+  
+  /*
+  path:hover, path.highlighted {
+	display: block;
+	position:absolute;
+	stroke-width: 4px;
+	stroke: black;
+  }*/
+  
+  div.tooltip {
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	color: black;
+	font-weight: bold;
+	padding: 4px 8px;
+	display: none;
+  }
+
+#picture
+{
+	float:right;
+}
+
+#about
+{
+	margin-left: 10;
+	position:relative;
+	left:10px;
+}
+
+p{
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.navigate li {
+  float: right;
+}
+
+.navigate li a {
+  display: block;
+  color: White;
+  text-align: center;
+  padding: 13px 15px;
+  text-decoration: none;
+}
+
+.navigate li a:hover {
+  background-color: red;
+}
+
+.active {
+  background-color: blue;
+}
+
+#wrap{
+	margin: 4em 8em;
+}
+
+#wrap-text{
+	margin: 1em 8em;
+}
+.center-align{
+	margin-right: auto;
+	margin-left:auto;
+	border: 2px solid black;
+	width:70%
+}
+
+.center{
+	display: block;
+	margin-right: auto;
+	margin-left:auto;
+	margin-top: 40px;
+}
+
+a{
+	text-decoration:none; 
+	color:inherit;
+}
+
+a:hover{
+	color: red;
+
+}

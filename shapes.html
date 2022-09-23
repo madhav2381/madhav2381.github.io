@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SVG shapes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+  
+  $("#rotate").click(function() {
+	//$(this).fadeOut();
+	});
+	
+  $("#rectangle").click(function() {
+	//$(this).slideUp();
+    $(this).hide();
+	});
+
+  $("#circle").click(function() {
+	$(this).hide();
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<nav class="navigate">
+    <ul> 
+        <li><a href="credits.html">CREDITS</a></li>
+        <li><a href="us-states.html">HOMEWORK-2</a></li>
+		<li><a href="shapes.html">SVG</a></li>
+		<li><a href="visualization.html">VISUALIZATION</a></li>
+		<li><a href="index.html">HOME</a></li>
+    </ul>
+</nav>
+
+<h3 id="wrap-text">Hover over the circle to speed it, Click on square to make it dissappear, Click on triangle to Rotate fast</h3>
+
+<div class="center-align">
+<svg id="circle" width="1000" height="150">
+   <circle cx="50" cy="50" r="40" stroke="cyan" stroke-width="4" fill="black" >
+   <animate attributeType="CSS" attributeName="cx" from="0" to="800" dur="20s" repeatCount="indefinite"/>
+</svg> 
+
+<script>
+    var firstTime = true;
+    $('#circle').hover(
+  function() {
+    $(this).find('animate').attr('dur', '3s');
+    if (firstTime) {
+      firstTime = false;
+      return;
+    }
+    document.getElementById("circle").setCurrentTime(
+      document.getElementById("circle").getCurrentTime() * 3 / 7);
+  },
+  function() {
+    $(this).find('animate').attr('dur', '7s');
+    document.getElementById("circle").setCurrentTime(
+      document.getElementById("circle").getCurrentTime() * 7 / 3);      }
+   );
+</script>
+  
+
+
+<svg id="rectangle" width="400" height="80">
+  <rect x="300" y="20" width="50" height="50" style="fill:black;stroke:cyan;stroke-width:4"/>
+  <animateTransform attributeName="transform" type="scale" from="1 1" to="3 3" begin="0s" dur="15s" repeatCount="indefinite"/>
+</svg>
+
+
+
+<div id="orbit"  style="text-align:center;">
+    <svg id = "rotate" width="400" height="130" right="0">
+        <!--<rect x="100" y="20" width="150" height="150" 
+        style="fill:blue;stroke:pink;stroke-width:5;opacity:0.5" /> -->
+        <polygon points = "120,70 90,90 60,60" stroke="cyan" stroke-width='3'>
+            <animateTransform attributeName="transform" type="rotate" dur="7s" from="0 60 70" to="360 60 70" repeatCount="indefinite" />
+        </polygon>  
+    </svg>
+</div>
+
+</div>
+<script>
+    $("#rotate").click(function() {
+	    //$(this).fadeOut();
+        $(this).find('animateTransform').attr('dur', '1s');
+
+
+	});
+</script>
+
+</body>
+
+</html>
