@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+
+    <title>Flow Visualization</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+
+    <script  src="./three.js"></script>
+    <script  src="./OrbitControls.js"></script>
+    <script  src="./scene.js"></script>
+    <script  src="./particleSystem.js"></script>
+    <script src="./main.js"></script>
+    <!--<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>-->
+
+
+</head>
+<!--onload="App.start()"-->
+<body onload="App.start()">
+
+    <nav class="navigate">
+        <ul> 
+            <li><a href="credits.html">CREDITS</a></li>
+            <li><a href="flow.html">HOMEWORK-3</a></li>
+            <li><a href="us-states.html">HOMEWORK-2</a></li>
+            <li><a href="shapes.html">SVG</a></li>
+            <li><a href="visualization.html">VISUALIZATION</a></li>
+            <li><a href="index.html">HOME</a></li>
+        </ul>
+    </nav>
+
+    <h2 style ="margin:auto; display: block; padding:10px; text-align:center">Flow Visualization using Three.js and D3.js</h2>
+
+
+    <div>
+        <div class="particles col-lg-8" >
+            <div id="scene"></div>
+        </div>
+        <div class="plane col-lg-4 "></div>
+    </div>
+    
+</body>
+</html>
