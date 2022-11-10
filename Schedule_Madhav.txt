@@ -1,0 +1,14 @@
+# project start
+
+Task(Hours)
+Design the overall UI for the web page	(4)
+Data Pre-processing (3)
+Design Visual Encodings of Human Body	(3)
+Mapping data to the visual encoding	(3)
+Design the interactions with Data	(3)
+
+
+# prototype
+# alpha
+# beta
+# release

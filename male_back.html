@@ -1,0 +1,146 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>BodyVisualiser</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<div class="navbar">
+			<div class="dropdown">
+				<button class="dropbtn">Gender 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="male_front.html">Male</a>
+				  <a href="female_front.html">Female</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Age 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Less than 30 Years</a>
+				  <a href="#">30-60 Years</a>
+				  <a href="#">More than 60 Years</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Skintone 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Type I-II</a>
+				  <a href="#">Type II-IV</a>
+				  <a href="#">Type V +</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Facing 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="male_front.html">Front</a>
+				  <a href="male_back.html">Back</a>
+				</div>
+			  </div>
+			</div>
+	</head>
+
+
+	<body>
+		<div class="row no-gutters">
+			<div class="col">
+				<div class="leftside no-gutters">
+					<img src="./images/male-back.jpg" alt="Back Male" usemap="#image-map-male-back">
+					<map id="map_ID_male_back" name="image-map-male-back">
+						<area target="_self" alt="EarL" title="EarL" href="" coords="93,67,8" shape="circle">
+						<area target="_self" alt="EarR" title="EarR" href="" coords="157,67,8" shape="circle">
+						<area target="_self" alt="Upper Back " title="Upper Back " href="" coords="103,162,146,197" shape="rect">
+						<area target="_self" alt="Posterior ArmL" title="Posterior ArmL" href="" coords="46,180,66,185,71,200,64,231,41,230,42,202" shape="poly">
+						<area target="_self" alt="Posterior ArmR" title="Posterior ArmR" href="" coords="203,183,182,186,178,198,185,231,206,228,207,204" shape="poly">
+						<area target="_self" alt="Posterior ForearmL" title="Posterior ForearmL" href="" coords="37,247,62,249,61,267,48,302,29,299,32,267" shape="poly">
+						<area target="_self" alt="Posterior ForearmR" title="Posterior ForearmR" href="" coords="187,250,211,249,215,261,219,298,201,301,189,269" shape="poly">
+						<area target="_self" alt="Lower Back" title="Lower Back" href="" coords="145,273,106,244" shape="rect">
+						<area target="_self" alt="Dorsal HandL" title="Dorsal HandL" href="" coords="26,342,21" shape="circle">
+						<area target="_self" alt="Dorsal HandR" title="Dorsal HandR" href="" coords="223,341,22" shape="circle">
+						<area target="_self" alt="Sole&nbsp;of&nbsp;FootL" title="Sole&nbsp;of&nbsp;FootL" href="" coords="124,564,83,580" shape="rect">
+						<area target="_self" alt="Sole&nbsp;of&nbsp;FootR" title="Sole&nbsp;of&nbsp;FootR" href="" coords="125,564,166,580" shape="rect">
+					</map>
+						
+					</map>
+				</div>
+			</div>
+			<div class="col">
+				<div class="rightside no-gutters">
+					<div class="row">
+						<div class="top">
+							<br>
+							<img src="./images/OCT_1.jpg" alt="OCT">
+						</div>
+					</div>
+					<div class="row">
+						<div class="bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="info"><a href="index.html">Switch to male body.</div>
+        <div id="info"><a href="female.html">Switch to female body.</a></div>
+		<div id="info"><a href="kid.html">Switch to kid's body.</a></div> -->
+		<div id="container"></div>
+		
+		<script src="js/three.js"></script>
+		
+		<script src="js/UCSCharacter.js"></script>
+
+		<script src='js/data.gui.js'></script>
+				
+		<script src="js/orbit.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+		<script>
+			window.onload = function () {
+				var ImageMap = function (map, img) {
+						var n,
+							areas = map.getElementsByTagName('area'),
+							len = areas.length,
+							coords = [],
+							previousWidth = 250;
+						for (n = 0; n < len; n++) {
+							coords[n] = areas[n].coords.split(',');
+						}
+						this.resize = function () {
+							var n, m, clen,
+								x = img.offsetWidth / previousWidth;
+							for (n = 0; n < len; n++) {
+								clen = coords[n].length;
+								for (m = 0; m < clen; m++) {
+									coords[n][m] *= x;
+								}
+								areas[n].coords = coords[n].join(',');
+							}
+							previousWidth = img.offsetWidth;
+							return true;
+						};
+						window.onresize = this.resize;
+					},
+					imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+				imageMap.resize();
+				return;
+			}
+			
+			$(document).tooltip({
+				track: true,
+				position: { my: "left+10 center", at: "right center" },
+			
+			});
+			</script>
+	</body>
+</html>

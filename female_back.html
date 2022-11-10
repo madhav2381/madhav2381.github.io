@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>BodyVisualiser</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+		<div class="navbar">
+			<div class="dropdown">
+				<button class="dropbtn">Gender 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="male_front.html">Male</a>
+				  <a href="female_front.html">Female</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Age 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Less than 30 Years</a>
+				  <a href="#">30-60 Years</a>
+				  <a href="#">More than 60 Years</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Skintone 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Type I-II</a>
+				  <a href="#">Type II-IV</a>
+				  <a href="#">Type V +</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Facing 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="female_front.html">Front</a>
+				  <a href="#female_back.html">Back</a>
+				</div>
+			  </div>
+			</div>
+		
+		<!-- <div id="info"><a href="index.html">Switch to male body.</a></div>
+		<div id="info"><a href="female.html">Switch to female body</div>
+		<div id="info"><a href="kid.html">Switch to kid's body.</a></div> -->
+		<div id="container"></div>
+		<div class="row no-gutters">
+			<div class="col">
+				<div class="leftside no-gutters">
+					<img src="./images/female-back.jpg" alt="Back Female"usemap="#image-map-female-back">
+					<map id="map_ID_female_back" name="image-map-female-back">
+						<area target="" alt="EarL" title="EarL" href="" coords="93,57,7" shape="circle">
+						<area target="" alt="EarR" title="EarR" href="" coords="156,57,7" shape="circle">
+						<area target="" alt="Upper Back " title="Upper Back " href="" coords="106,157,142,186" shape="rect">
+						<area target="" alt="Lower Back " title="Lower Back " href="" coords="108,245,139,271" shape="rect">
+						<area target="" alt="Posterior ArmL" title="Posterior ArmL" href="" coords="60,169,78,169,79,179,75,217,56,217" shape="poly">
+						<area target="" alt="Posterior ArmR" title="Posterior ArmR" href="" coords="169,169,168,181,172,211,191,210,187,169" shape="poly">
+						<area target="" alt="Posterior ForearmL" title="Posterior ForearmL" href="" coords="51,235,46,247,42,277,58,281,73,239" shape="poly">
+						<area target="" alt="Posterior ForearmR" title="Posterior ForearmR" href="" coords="177,241,196,237,201,249,205,276,188,280" shape="poly">
+						<area target="" alt="Dorsal HandL" title="Dorsal HandL" href="" coords="32,323,22" shape="circle">
+						<area target="" alt="Dorsal HandR" title="Dorsal HandR" href="" coords="215,323,22" shape="circle">
+						<area target="" alt="Sole&nbsp;of&nbsp;FootL" title="Sole&nbsp;of&nbsp;FootL" href="" coords="123,576,85,589" shape="rect">
+						<area target="" alt="Sole&nbsp;of&nbsp;FootR" title="Sole&nbsp;of&nbsp;FootR" href="" coords="124,576,163,589" shape="rect">
+					</map>
+				</div>
+			</div>
+			<div class="col">
+				<div class="rightside no-gutters">
+					<div class="row">
+						<div class="top no-gutters">
+							<br>
+							<img src="./images/OCT_1.jpg" alt="OCT">
+						</div>
+					</div>
+					<div class="row">
+						<div class="bottom no-gutters">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/three.js"></script>
+		
+		<script src="js/UCSCharacter.js"></script>
+
+		<script src='js/data.gui.js'></script>
+				
+		<script src="js/orbit.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+		<script>
+			window.onload = function () {
+				var ImageMap = function (map, img) {
+						var n,
+							areas = map.getElementsByTagName('area'),
+							len = areas.length,
+							coords = [],
+							previousWidth = 250;
+						for (n = 0; n < len; n++) {
+							coords[n] = areas[n].coords.split(',');
+						}
+						this.resize = function () {
+							var n, m, clen,
+								x = img.offsetWidth / previousWidth;
+							for (n = 0; n < len; n++) {
+								clen = coords[n].length;
+								for (m = 0; m < clen; m++) {
+									coords[n][m] *= x;
+								}
+								areas[n].coords = coords[n].join(',');
+							}
+							previousWidth = img.offsetWidth;
+							return true;
+						};
+						window.onresize = this.resize;
+					},
+					imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+				imageMap.resize();
+				return;
+			}
+			
+			$(document).tooltip({
+				track: true,
+				position: { my: "left+10 center", at: "right center" },
+			
+			});
+			</script>
+
+	</body>
+</html>

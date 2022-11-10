@@ -1,0 +1,151 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>BodyVisualiser</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+		<div class="navbar">
+			<div class="dropdown">
+				<button class="dropbtn">Gender 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="male_front.html">Male</a>
+				  <a href="female_front.html">Female</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Age 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Less than 30 Years</a>
+				  <a href="#">30-60 Years</a>
+				  <a href="#">More than 60 Years</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Skintone 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Type I-II</a>
+				  <a href="#">Type II-IV</a>
+				  <a href="#">Type V +</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Facing 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="female_front.html">Front</a>
+				  <a href="female_back.html">Back</a>
+				</div>
+			  </div>
+			</div>
+		
+		<!-- <div id="info"><a href="index.html">Switch to male body.</a></div>
+		<div id="info"><a href="female.html">Switch to female body</div>
+		<div id="info"><a href="kid.html">Switch to kid's body.</a></div> -->
+		<div id="container"></div>
+		<div class="row no-gutters">
+			<div class="col">
+				<div class="leftside no-gutters">
+					<img src="./images/female-front.jpg" alt="Front Female" usemap="#image-map-female-front">
+					<map id="map_ID_female_front" name="image-map-female-front">
+						<area target="_self" alt="Forehead" title="Forehead" href="" coords="122,17,109,19,103,25,98,33,150,33,145,24,136,18" shape="poly">
+						<area target="_self" alt="Nasal Tip" title="Nasal Tip" href="" coords="124,61,7" shape="circle">
+						<area target="_self" alt="CheekL" title="CheekL" href="" coords="106,76,9" shape="circle">
+						<area target="_self" alt="CheekR" title="CheekR" href="" coords="143,76,9" shape="circle">
+						<area target="_self" alt="Lip" title="Lip" href="" coords="117,82,132,87" shape="rect">
+						<area target="_self" alt="Anterior Neck" title="Anterior Neck" href="" coords="110,100,120,105,128,105,138,101,138,112,110,112" shape="poly">
+						<area target="_self" alt="ChestL" title="ChestL" href="" coords="99,174,18" shape="circle">
+						<area target="_self" alt="ChestR" title="ChestR" href="" coords="148,174,18" shape="circle">
+						<area target="_self" alt="Abdomen" title="Abdomen" href="" coords="99,212,151,212,151,259,125,279,97,259" shape="poly">
+						<area target="_self" alt="Anterior ArmL" title="Anterior ArmL" href="" coords="59,171,79,175,76,216,55,215" shape="poly">
+						<area target="_self" alt="Anterior ArmR" title="Anterior ArmR" href="" coords="170,174,188,169,192,214,172,218" shape="poly">
+						<area target="_self" alt="Anterior ForearmL" title="Anterior ForearmL" href="" coords="54,226,75,228,60,276,43,274,46,247" shape="poly">
+						<area target="_self" alt="Anterior ForearmR" title="Anterior ForearmR" href="" coords="174,232,195,230,203,254,205,279,189,281" shape="poly">
+						<area target="_self" alt="PalmL" title="PalmL" href="" coords="33,323,22" shape="circle">
+						<area target="_self" alt="PalmR" title="PalmR" href="" coords="214,323,23" shape="circle">
+						<area target="_self" alt="ThighL" title="ThighL" href="" coords="75,341,85,399,120,398,120,344" shape="poly">
+						<area target="_self" alt="ThighR" title="ThighR" href="" coords="129,345,128,396,161,401,171,346" shape="poly">
+						<area target="_self" alt="ShinL" title="ShinL" href="" coords="90,488,121,487,119,540,101,539,94,511" shape="poly">
+						<area target="_self" alt="ShinR" title="ShinR" href="" coords="128,487,129,540,148,540,155,505,157,488" shape="poly">
+						<area target="_self" alt="Dorsal FootL" title="Dorsal FootL" href="" coords="104,563,90,582,104,590,123,590,121,564" shape="poly">
+						<area target="_self" alt="Dorsal FootR" title="Dorsal FootR" href="" coords="128,564,127,589,144,590,160,582,146,564" shape="poly">
+					</map>
+				</div>
+			</div>
+			<div class="col">
+				<div class="rightside no-gutters">
+					<div class="row">
+						<div class="top">
+							<br>
+							<img src="./images/OCT_1.jpg" alt="OCT">
+						</div>
+					</div>
+					<div class="row">
+						<div class="bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/three.js"></script>
+		
+		<script src="js/UCSCharacter.js"></script>
+
+		<script src='js/data.gui.js'></script>
+				
+		<script src="js/orbit.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+		<script>
+			window.onload = function () {
+				var ImageMap = function (map, img) {
+						var n,
+							areas = map.getElementsByTagName('area'),
+							len = areas.length,
+							coords = [],
+							previousWidth = 250;
+						for (n = 0; n < len; n++) {
+							coords[n] = areas[n].coords.split(',');
+						}
+						this.resize = function () {
+							var n, m, clen,
+								x = img.offsetWidth / previousWidth;
+							for (n = 0; n < len; n++) {
+								clen = coords[n].length;
+								for (m = 0; m < clen; m++) {
+									coords[n][m] *= x;
+								}
+								areas[n].coords = coords[n].join(',');
+							}
+							previousWidth = img.offsetWidth;
+							return true;
+						};
+						window.onresize = this.resize;
+					},
+					imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+				imageMap.resize();
+				return;
+			}
+			
+			$(document).tooltip({
+				track: true,
+				position: { my: "left+10 center", at: "right center" },
+			
+			});
+			</script>
+	</body>
+</html>

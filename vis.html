@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- width="20%" height="30%" -->
+<head> 
+<!-- CSS file -->
+<!--<link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.css" />-->
+<!--<link rel="stylesheet" href="http://jr501.hostsaba.com/modules/jrTips/contrib/qtips2/jquery.qtip.css?_v=1.0.2" media="screen"/>-->
+</head>
+<style>
+    .ui-tooltip{
+        position: relative;
+    }
+</style>
+<body>
+<img id = "img_ID" src="male-encoding.jpg" usemap="#image-map" width="20%" height="30%">
+
+<map id = "map_ID" name="image-map">
+    <area id = "myarea" target="" alt="" title="Palm" data-placement ="right" data-toggle = "tooltip" href="#" coords="80,341,27" shape="circle">
+    <area target="" alt="" title="Lip" data-placement ="right" data-toggle = "tooltip" href="#" coords="173,96,8" shape="circle">
+    <area target="" alt="Chest" title="Chest" href="" coords="152,181,13" shape="circle">
+</map>
+
+<!--
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+<!--
+<script type="text/javascript" src="http://jr501.hostsaba.com/modules/jrTips/contrib/qtips2/imagesloaded.pkg.min.js?_v=1.0.2"></script>
+<script type="text/javascript" src="http://jr501.hostsaba.com/modules/jrTips/contrib/qtips2/jquery.qtip.min.js?_v=1.0.2"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.1/jquery.imagesloaded.min.js"></script>
+-->
+
+<script>
+window.onload = function () {
+    var ImageMap = function (map, img) {
+            var n,
+                areas = map.getElementsByTagName('area'),
+                len = areas.length,
+                coords = [],
+                previousWidth = 612;
+            for (n = 0; n < len; n++) {
+                coords[n] = areas[n].coords.split(',');
+            }
+            this.resize = function () {
+                var n, m, clen,
+                    x = img.offsetWidth / previousWidth;
+                for (n = 0; n < len; n++) {
+                    clen = coords[n].length;
+                    for (m = 0; m < clen; m++) {
+                        coords[n][m] *= x;
+                    }
+                    areas[n].coords = coords[n].join(',');
+                }
+                previousWidth = img.offsetWidth;
+                return true;
+            };
+            window.onresize = this.resize;
+        },
+        imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+    imageMap.resize();
+    return;
+}
+
+$(document).tooltip();
+    // {track : true}
+</script>
+
+</body>
+
+<!--
+    tooltip reference
+    https://stackoverflow.com/questions/8730264/how-to-customize-qtip2-css 
+-->

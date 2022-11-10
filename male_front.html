@@ -1,0 +1,154 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>BodyVisualiser</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<div class="navbar">
+			<div class="dropdown">
+				<button class="dropbtn">Gender 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="male_front.html">Male</a>
+				  <a href="female_front.html">Female</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Age 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Less than 30 Years</a>
+				  <a href="#">30-60 Years</a>
+				  <a href="#">More than 60 Years</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Skintone 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="#">Type I-II</a>
+				  <a href="#">Type II-IV</a>
+				  <a href="#">Type V +</a>
+				</div>
+			  </div>
+			  <div class="dropdown">
+				<button class="dropbtn">Facing 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="male_front.html">Front</a>
+				  <a href="male_back.html">Back</a>
+				</div>
+			  </div>
+			</div>
+	</head>
+
+
+	<body>
+		<div class="row no-gutters">
+			<div class="col">
+				<div class="leftside no-gutters">
+					<img src="./images/male-front.jpg" alt="Front Male" usemap="#image-map-male-front">
+					<map id = "map_ID_male_front" name="image-map-male-front">
+						<area target="_self" alt="Forehead" title="Forehead" href="" coords="146,28,156,42,96,42,105,28,125,21,125,21,125,21" shape="poly">
+						<area target="_self" alt="Nasal Tip" title="Nasal Tip" href="" coords="126,70,7" shape="circle">
+						<area target="_self" alt="CheekR" title="CheekR" href="" coords="146,83,9" shape="circle">
+						<area target="_self" alt="CheekL" title="CheekL" href="" coords="106,83,9" shape="circle">
+						<area target="_self" alt="Lip" title="Lip" href="" coords="118,84,134,91" shape="rect">
+						<area target="_self" alt="Anterior Neck" title="Anterior Neck" href="" coords="107,103,118,109,132,109,143,104,144,117,106,117" shape="poly">
+						<area target="_self" alt="ChestL" title="ChestL" href="" coords="95,178,20" shape="circle">
+						<area target="_self" alt="ChestR" title="ChestR" href="" coords="155,178,21" shape="circle">
+						<area target="_self" alt="Abdomen" title="Abdomen" href="" coords="92,219,159,220,158,274,127,296,92,272,92,253" shape="poly">
+						<area target="_self" alt="Anterior ForearmL" title="Anterior ForearmL" href="" coords="40,245,61,248,64,263,46,309,29,301,32,266" shape="poly">
+						<area target="_self" alt="Anterior ForearmR" title="Anterior ForearmR" href="" coords="187,251,210,245,218,264,220,302,205,308,188,269" shape="poly">
+						<area target="_self" alt="Anterior ArmL" title="Anterior ArmL" href="" coords="46,178,70,182,70,207,63,241,42,237,41,205" shape="poly">
+						<area target="_self" alt="Anterior ArmR" title="Anterior ArmR" href="" coords="180,185,203,181,208,199,208,235,187,241,180,206" shape="poly">
+						<area target="_self" alt="PalmL" title="PalmL" href="" coords="29,339,25" shape="circle">
+						<area target="_self" alt="PalmR" title="PalmR" href="" coords="220,339,25" shape="circle">
+						<area target="_self" alt="ThighL" title="ThighL" href="" coords="120,333,121,364,121,397,84,399,78,363,77,330" shape="poly">
+						<area target="_self" alt="ThighR" title="ThighR" href="" coords="128,332,173,329,172,365,167,398,129,397,128,365" shape="poly">
+						<area target="_self" alt="ShinL" title="ShinL" href="" coords="88,461,89,481,100,527,120,525,122,480,122,461" shape="poly">
+						<area target="_self" alt="ShinR" title="ShinR" href="" coords="128,461,128,480,130,524,151,525,161,482,162,460" shape="poly">
+						<area target="_self" alt="Dorsal FootL" title="Dorsal FootL" href="" coords="123,551,124,576,104,576,89,568,101,551" shape="poly">
+						<area target="_self" alt="Dorsal FootR" title="Dorsal FootR" href="" coords="128,551,127,576,148,576,163,569,149,551" shape="poly">
+						<area target="_self" alt="" title="" href="" coords="" shape="0">
+					</map>
+				</div>
+			</div>
+			<div class="col">
+				<div class="rightside no-gutters">
+					<div class="row">
+						<div class="top no-gutters">
+							<br>
+							<img src="./images/OCT_1.jpg" alt="OCT">
+						</div>
+					</div>
+					<div class="row">
+						<div class="bottom no-gutters">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="info"><a href="index.html">Switch to male body.</div>
+        <div id="info"><a href="female.html">Switch to female body.</a></div>
+		<div id="info"><a href="kid.html">Switch to kid's body.</a></div> -->
+		<div id="container"></div>
+		
+		<script src="js/three.js"></script>
+		
+		<script src="js/UCSCharacter.js"></script>
+
+		<script src='js/data.gui.js'></script>
+				
+		<script src="js/orbit.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+		<script>
+			window.onload = function () {
+				var ImageMap = function (map, img) {
+						var n,
+							areas = map.getElementsByTagName('area'),
+							len = areas.length,
+							coords = [],
+							previousWidth = 250;
+						for (n = 0; n < len; n++) {
+							coords[n] = areas[n].coords.split(',');
+						}
+						this.resize = function () {
+							var n, m, clen,
+								x = img.offsetWidth / previousWidth;
+							for (n = 0; n < len; n++) {
+								clen = coords[n].length;
+								for (m = 0; m < clen; m++) {
+									coords[n][m] *= x;
+								}
+								areas[n].coords = coords[n].join(',');
+							}
+							previousWidth = img.offsetWidth;
+							return true;
+						};
+						window.onresize = this.resize;
+					},
+					imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+				imageMap.resize();
+				return;
+			}
+			
+			$(document).tooltip({
+				track: true,
+				position: { my: "left+10 center", at: "right center" },
+			
+			});
+			</script>
+	</body>
+</html>
